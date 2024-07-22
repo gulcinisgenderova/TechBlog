@@ -1,0 +1,25 @@
+.mainContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mains{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    gap: 10px; 
+  }
+  
+  .grid-item {
+    background-color: #f4f4f4; 
+    padding: 20px; 
+    border: 1px solid #ddd; 
+    text-align: center; 
+  }
