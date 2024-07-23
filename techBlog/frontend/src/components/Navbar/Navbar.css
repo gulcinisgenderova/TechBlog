@@ -12,7 +12,14 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  
+  position: relative;
+}
+
+.navbar-brand {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .navbar-brand a {
@@ -20,6 +27,7 @@
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: 700;
+  margin-right: auto;
 }
 
 .navbar-toggler {
@@ -34,6 +42,7 @@
 .navbar-menu {
   display: flex;
   gap: 1rem;
+width: 400px;
 }
 
 .navbar-menu a {
@@ -52,15 +61,21 @@
   background: white;
   padding: 1rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
 @media (max-width: 768px) {
+  .navbar-brand {
+    justify-content: space-between;
+  }
+
   .navbar-menu {
     display: none;
   }
 
   .navbar-toggler {
     display: block;
+    text-align: end;
   }
 
   .navbar-menu.is-active {

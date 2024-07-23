@@ -2,7 +2,8 @@ import { BlogModel } from '../models/blogModel.js';
 
 export const getAll = async (req, res) => {
   try {
-    const blogs = await BlogModel.find({});
+    // const blogs = await BlogModel.find({});
+    const blogs = await BlogModel.find({}).sort({ createdAt: -1 });
     res.json(blogs);
   } catch (error) {
     console.log(error);
@@ -31,7 +32,7 @@ export const createBlog = async (req, res) => {
       username,
       name,
       description,
-      img: "http://localhost:3000/" + req.uploadFileName
+      image: "http://localhost:3000/image/" + req.uploadFileName
     });
     await blog.save();
     res.status(201).json(blog);
@@ -46,19 +47,31 @@ export const updateBlog = async (req, res) => {
     const { id } = req.params;
     const { username, name, description } = req.body;
 
+
     const blog = await BlogModel.findById(id);
     if (!blog) {
+
       return res.status(404).json({ msg: 'Blog not found' });
     }
 
+
     if (blog.username === req.body.username) {
+      const updateData = { username, name, description };
+
+
+      if (req.file) {
+        updateData.image = "http://localhost:3000/image/" + req.uploadFileName;
+      }
+
+
       const updatedBlog = await BlogModel.findByIdAndUpdate(
         id,
-        { username, name, description, img: "http://localhost:3000/" + req.uploadFileName },
+        updateData,
         { new: true }
       );
       res.json(updatedBlog);
     } else {
+
       return res.status(403).json({ msg: 'Unauthorized action' });
     }
   } catch (error) {
@@ -66,6 +79,7 @@ export const updateBlog = async (req, res) => {
     res.status(500).send('Server Error');
   }
 };
+
 
 export const deleteBlog = async (req, res) => {
   try {

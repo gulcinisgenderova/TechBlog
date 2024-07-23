@@ -1,0 +1,167 @@
+.bodys {
+  margin: 0;
+  /* padding-top: 100px; */
+  font-family: Arial, sans-serif;
+  background: #f8f9fa;
+  /* height: 100vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signUpPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px;
+}
+
+.signUp {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.signUpContent {
+  padding: 30px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form Styles */
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input, .input2 {
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.field:focus {
+  border-color: #007bff;
+}
+
+.fields {
+  position: relative;
+}
+
+.fields .field {
+  padding-right: 40px;
+}
+
+.fields i {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #888;
+}
+
+.fields i:hover {
+  color: #333;
+}
+
+button {
+  width: 100%;
+  padding: 10px 0;
+  background: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+span {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block;
+}
+
+.signUpText .privacy {
+  font-size: 12px;
+  color: #777;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.haveAccount {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.haveAccount p {
+  color: #555;
+}
+
+.haveAccount a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.haveAccount a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .bodys {
+      padding-top: 50px;
+  }
+  
+  .signUpPage {
+      max-width: 90%;
+      margin: 10px;
+  }
+  
+  .signUpContent {
+      padding: 20px;
+  }
+
+  h2 {
+      font-size: 24px;
+  }
+
+  .field {
+      font-size: 14px;
+  }
+
+  button {
+      font-size: 16px;
+  }
+
+  .signUpText .privacy {
+      font-size: 10px;
+  }
+}

@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './style.css'; // CSS dosyanızı uygun şekilde ekleyin
+import '../Home/style.css'; 
+
+import HomeSlider from './slider';
+import { NavLink } from 'react-router-dom';
 
 const Home = () => {
   const [blogs, setBlogs] = useState([]);
@@ -30,25 +33,32 @@ const Home = () => {
 
   return (
     <>
-      <div className='mainContent'>
-        <img src="sophia.jpg" alt="Sophia smiling" />
+      <div >
+      <HomeSlider/>
       </div>
       <div className="grid-container">
-        {blogs.map(blog => (
-          <div key={blog.id} className="grid-item">
-            <div className="max-w-sm rounded overflow-hidden shadow-lg mx-auto my-4">
-              <img className="w-full" src={blog.img} />
-              <div className="px-6 py-4">
-                <div className="font-bold text-xl mb-2">{blog.name}</div>
-                <p className="text-gray-700 text-base">
-                  {getExcerpt(blog.description, 1)}
-                </p>
-                <p className="text-red-700 text-base">
-                  {new Date(blog.createdAt).toLocaleDateString()}
-                </p>
-              </div>
+      {blogs.map(blog => (
+        <NavLink 
+          key={blog._id} 
+          to={`/detail/${blog._id}`} 
+          className="grid-item-link"
+        >
+          <div className="max-w-sm rounded overflow-hidden shadow-lg mx-auto my-4">
+            <img className="w-full imgs" src={blog.image} alt={blog.name} />
+            <div className="px-6 py-4">
+              <div className="font-bold text-xl mb-2">{blog.name}</div>
+              <p className="text-gray-700 text-base dateBy">
+                {getExcerpt(blog.description, 1)}
+              </p>
+              <p className="text-black-700 text-base dateBy">
+                Author: {blog.username}
+              </p>
+              <p className="text-red-700 text-base dateBy">
+                Date: {new Date(blog.createdAt).toLocaleDateString()}
+              </p>
             </div>
           </div>
+        </NavLink>
         ))}
       </div>
     </>

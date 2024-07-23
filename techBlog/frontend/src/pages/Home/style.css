@@ -1,25 +1,132 @@
-.mainContent{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.mains{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    justify-content: center;
-    align-items: center;
-    margin: 30px;
-    gap: 10px; 
-  }
-  
-  .grid-item {
-    background-color: #f4f4f4; 
-    padding: 20px; 
-    border: 1px solid #ddd; 
-    text-align: center; 
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 30px;
+  justify-content: center;
+}
+
+.grid-item {
+  position: relative;
+  overflow: hidden; 
+  background-color: #f4f4f4; 
+  padding: 20px; 
+  border: 1px solid #ddd; 
+  text-align: center; 
+}
+
+.max-w-sm {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out; 
+}
+
+.max-w-sm img {
+  transition: transform 0.3s ease-in-out;
+  width: 100%;
+  height: auto; 
+}
+
+.grid-item:hover .max-w-sm img {
+  transform: scale(1.1); 
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.text-gray-700 {
+  color: #4a5568;
+}
+
+.text-red-700 {
+  color: #c53030;
+}
+
+.dateBy {
+  display: flex;
+  justify-content: start;
+}
+
+
+.slick-next {
+  display: none !important;
+}
+
+.slick-prev {
+  display: none !important;
+}
+
+.sliderImage {
+  font-family: sans-serif;
+  width: 80%;
+  min-height: 80vh;
+  max-width: 100%;
+  margin: 20px auto;
+}
+
+.sliderImage img {
+  width: 100%;
+}
+
+.sliderImage .text {
+  width: 60%;
+  margin: 20px auto;
+}
+
+.sliderImage .text h1 {
+  color: #222222;
+  font-size: 32px;
+  line-height: 121.02%;
+}
+
+.sliderImage .text p {
+  color: #474747;
+  font-size: 18px;
+  margin: 10px 0;
+}
+.grid-item { 
+  position: relative; 
+  overflow: hidden;  
+} 
+ 
+ 
+.max-w-sm { 
+  border-radius: 8px; 
+  overflow: hidden; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+} 
+ 
+ 
+.max-w-sm img { 
+  transition: transform 0.3s ease-in-out; 
+  width: 100%; 
+} 
+ 
+.grid-item:hover .max-w-sm img { 
+  transform: scale(1.1);  
+}
+.imgs{
+  max-width: 400px;
+max-height: 200px;
+}

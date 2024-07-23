@@ -1,0 +1,111 @@
+.containerDetail {
+  width: 80%;
+  margin: 40px auto;
+}
+
+.containerDetail .detail {
+  max-width: 100%;
+  width: 100%;
+  font-family: sans-serif;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerDetail .detail .card {
+  box-shadow: 0px 10px 20px 0px rgba(0, 23, 51, 0.09);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  transition: all 600ms;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.containerDetail .detail .card .image {
+  width: 100%;
+  max-width: 300px;
+}
+
+.containerDetail .detail .card .image img {
+  width: 100%;
+}
+
+.containerDetail .detail .card .texts {
+  padding: 25px;
+  line-height: 1.6;
+}
+
+.containerDetail .detail .card .texts h3 {
+  margin: 10px 0;
+}
+
+.containerDetail .detail .card .texts p {
+  line-height: 1.6;
+  margin: 20px 0;
+}
+
+.author {
+  font-weight: bold;
+  color: red;
+}
+
+.prodName {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.dateByy {
+  font-size: 14px;
+  color: gray;
+}
+
+@media (max-width: 768px) {
+  .containerDetail {
+    width: 90%;
+  }
+
+  .containerDetail .detail .card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .containerDetail .detail .card .image {
+    max-width: 100%;
+  }
+
+  .containerDetail .detail .card .texts {
+    padding: 20px;
+  }
+
+  .containerDetail .detail .card .texts h3 {
+    font-size: 1.5rem;
+  }
+
+  .containerDetail .detail .card .texts p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .containerDetail {
+    width: 95%;
+  }
+
+  .containerDetail .detail .card {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .containerDetail .detail .card .texts h3 {
+    font-size: 1.2rem;
+  }
+
+  .containerDetail .detail .card .texts p {
+    font-size: 0.9rem;
+  }
+}
